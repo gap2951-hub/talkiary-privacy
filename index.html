@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talkiary 개인정보처리방침</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 64px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.75;
+    color: #2a2a28;
+    background: #faf6ed;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header { padding: 48px 0 8px; }
+  h1 { font-size: 1.7rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .sub { color: #6b6a63; font-size: 0.92rem; margin: 0; }
+  h2 {
+    font-size: 1.18rem;
+    margin: 40px 0 10px;
+    padding-top: 20px;
+    border-top: 1px solid #e6e0d2;
+    letter-spacing: -0.01em;
+  }
+  h3 { font-size: 1.02rem; margin: 22px 0 6px; }
+  p, li { font-size: 1rem; }
+  ul { padding-left: 1.25em; }
+  li { margin: 5px 0; }
+  a { color: #3f7a63; }
+  code { background: #efe9db; padding: 1px 6px; border-radius: 5px; font-size: 0.9em; }
+  .note {
+    background: #f1ede0;
+    border: 1px solid #e2dcce;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 18px 0;
+    font-size: 0.95rem;
+  }
+  .highlight { font-weight: 600; }
+  footer { margin-top: 48px; color: #6b6a63; font-size: 0.88rem; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #e2dcce; padding: 9px 12px; text-align: left; vertical-align: top; }
+  th { background: #f1ede0; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Talkiary 개인정보처리방침</h1>
+  <p class="sub">시행일: 2026년 7월 20일 · 최종 수정일: 2026년 7월 20일</p>
+</header>
+
+<p>
+  Talkiary(이하 “본 앱”)는 이용자가 AI와 음성으로 하루를 이야기하면 그 내용을 바탕으로 일기를 만들어 주는
+  안드로이드 애플리케이션입니다. 본 방침은 본 앱이 이용자의 정보를 어떻게 다루는지 설명합니다.
+</p>
+
+<div class="note">
+  <span class="highlight">핵심 요약</span> — 본 앱은 <span class="highlight">별도의 서버를 운영하지 않습니다.</span>
+  이용자의 일기·대화 기록·설정은 모두 이용자의 <span class="highlight">기기 안에만</span> 저장되며, 개발자는 이를 수집하거나
+  열람할 수 없습니다. 본 앱은 광고, 분석 도구, 추적 기능을 일절 포함하지 않습니다. 다만 AI 대화 기능을 위해
+  이용자가 입력한 내용이 아래에 설명된 방식으로 <span class="highlight">Google 등 제3자 서비스로 전송</span>됩니다.
+</div>
+
+<h2>1. 본 앱이 처리하는 정보</h2>
+
+<h3>음성(마이크)</h3>
+<ul>
+  <li>AI와 통화할 때 이용자의 음성을 마이크로 입력받아 <span class="highlight">텍스트로 변환</span>하는 데 사용합니다.</li>
+  <li>음성 변환은 <span class="highlight">기기의 시스템 음성인식 기능</span>(대부분의 기기에서 Google 음성인식)을 통해 이루어집니다. 이 과정에서 오디오가 해당 음성인식 제공자의 서버로 전송되어 처리될 수 있습니다.</li>
+  <li>본 앱은 <span class="highlight">녹음된 오디오 파일을 저장하지 않으며</span>, 변환된 텍스트만 대화에 사용합니다.</li>
+</ul>
+
+<h3>대화 및 일기 내용</h3>
+<ul>
+  <li>이용자가 AI와 나눈 대화 텍스트, 대화 요약, AI가 생성한 일기, 감정 분류, 그리고 “장기 기억”·“말투 프로필” 등 대화 품질을 위해 앱이 정리한 정보가 포함됩니다.</li>
+  <li>이 정보는 이용자의 <span class="highlight">기기 내부 데이터베이스에만 저장</span>됩니다.</li>
+  <li>AI 응답과 일기를 생성하기 위해, 해당 대화 내용은 아래 3항의 Google Gemini로 전송됩니다.</li>
+</ul>
+
+<h3>AI 연결 키(이용자 본인의 API 키)</h3>
+<ul>
+  <li>본 앱의 AI 기능은 이용자가 직접 발급받은 Google Gemini API 키로 동작합니다.</li>
+  <li>이 키는 <span class="highlight">Android Keystore로 암호화</span>되어 이용자의 기기에만 저장되며, 개발자나 외부로 전송되지 않습니다.</li>
+</ul>
+
+<h3>기기 권한</h3>
+<table>
+  <tr><th>권한</th><th>사용 목적</th></tr>
+  <tr><td>마이크(RECORD_AUDIO)</td><td>AI와의 음성 대화를 텍스트로 변환하기 위함</td></tr>
+  <tr><td>인터넷(INTERNET)</td><td>AI 응답 생성 및 고품질 음성 모델 다운로드를 위함</td></tr>
+</table>
+
+<h2>2. 정보의 저장과 보안</h2>
+<ul>
+  <li>모든 일기·대화 기록·설정은 이용자 <span class="highlight">기기 내 로컬 저장소</span>에만 보관됩니다. 개발자가 운영하는 서버는 존재하지 않습니다.</li>
+  <li>AI 연결 키는 Android Keystore 기반 암호화로 저장됩니다.</li>
+  <li>본 앱은 이용자를 식별하기 위한 계정 생성, 로그인, 회원가입을 요구하지 않습니다.</li>
+</ul>
+
+<h2>3. 제3자 서비스</h2>
+<p>본 앱은 다음 제3자 서비스를 이용하며, 각 서비스로 전송되는 정보는 해당 서비스의 개인정보처리방침을 따릅니다.</p>
+<table>
+  <tr><th>서비스</th><th>전송되는 정보 / 목적</th></tr>
+  <tr>
+    <td>Google Gemini API<br>(이용자 본인 키 사용)</td>
+    <td>AI 응답·일기 생성을 위해 대화 텍스트가 전송됩니다. 이용자 본인의 API 키로 호출되므로 Google의 API 이용약관 및 개인정보처리방침이 적용됩니다.</td>
+  </tr>
+  <tr>
+    <td>기기 시스템 음성인식<br>(대부분 Google)</td>
+    <td>음성을 텍스트로 변환하기 위해 오디오가 인식 제공자로 전송될 수 있습니다.</td>
+  </tr>
+  <tr>
+    <td>Hugging Face</td>
+    <td>이용자가 “고품질 AI 목소리(Supertonic)”를 선택해 <span class="highlight">모델을 다운로드할 때만</span> 접속합니다. 파일 다운로드 용도이며, 이용자의 대화나 개인정보는 전송되지 않습니다.</td>
+  </tr>
+</table>
+<p style="font-size:0.92rem; color:#6b6a63;">
+  참고: Google 개인정보처리방침 —
+  <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+</p>
+
+<h2>4. 정보의 보관 기간 및 삭제</h2>
+<ul>
+  <li>기기에 저장된 일기·대화 기록은 이용자가 삭제하기 전까지 보관되며, 앱 내에서 <span class="highlight">개별 삭제</span>할 수 있습니다.</li>
+  <li>본 앱을 <span class="highlight">삭제(제거)하면</span> 기기에 저장된 모든 데이터와 AI 연결 키가 함께 삭제됩니다.</li>
+  <li>이용자가 “데이터 백업” 기능으로 만든 백업 파일은 이용자가 선택한 위치에 저장되며, 그 관리 책임은 이용자에게 있습니다.</li>
+</ul>
+
+<h2>5. 아동의 개인정보</h2>
+<p>
+  본 앱은 만 14세 미만 아동을 주 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.
+</p>
+
+<h2>6. 방침의 변경</h2>
+<p>
+  본 방침은 법령이나 서비스 변경에 따라 개정될 수 있으며, 개정 시 본 페이지에 변경 내용과 시행일을 게시합니다.
+</p>
+
+<h2>7. 문의처</h2>
+<p>
+  본 방침이나 개인정보 처리에 관한 문의는 아래로 연락해 주세요.<br>
+  이메일: <a href="mailto:kbkim@drminside.com">kbkim@drminside.com</a>
+</p>
+
+<footer>
+  © 2026 Talkiary. 본 문서는 Google Play 정책에 따른 개인정보처리방침입니다.
+</footer>
+</div>
+</body>
+</html>
